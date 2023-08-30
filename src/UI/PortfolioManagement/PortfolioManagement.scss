@@ -1,0 +1,16 @@
+.main-right{
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 25rem;
+    background-color: #dcdcdc;
+    z-index: 300;
+}
+.exit{
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    width: 35px;
+    height: 35px;color: rgb(55, 55, 55);
+}

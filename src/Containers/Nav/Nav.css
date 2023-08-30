@@ -1,4 +1,5 @@
 .nav-container {
+  position: fixed;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -9,6 +10,9 @@
 }
 
 .navbar-brand {
+  position: fixed;
+  left: 0.5rem;
+  top: 0.5rem;
   margin: 5px 30px;
   font-size: 1.25rem;
   text-decoration: none;
@@ -16,25 +20,86 @@
   font-family: Open Sans;
 }
 
-.nav-button-container {
+.button-container {
   display: flex;
   justify-content: start;
-  width: 80%;
+  width: 70%;
+  height: 7vh;
+  transition: 0.5s;
+  margin-bottom: 10px;
+  background-color: #212529;
 }
-
-.add-order {
+.button-container button:hover {
+  cursor: pointer;
+}
+.button-container button {
   font-size: 1rem;
   border: none;
   margin: 5px 15px;
   text-decoration: none;
   font-family: Open Sans;
+}
+
+.add-order, .portfolio, .market-map, .about-the-app {
   color: #0d6efd;
   background-color: #212529;
 }
 
+.check-btn svg {
+  width: 60px;
+  position: fixed;
+  right: 1.5rem;
+  top: 0rem;
+  color: #fff;
+  z-index: 10;
+}
+
+.check-btn,
+#check {
+  display: none;
+  cursor: pointer;
+}
+
+.profit {
+  background-color: rgba(4, 117, 4, 0.81);
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+  height: 45px;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: rgba(233, 233, 233, 0.7333333333);
+}
+
 @media (max-width: 970px) {
-  .nav-button-container {
-    display: none;
+  .check-btn {
+    display: block;
+  }
+  .button-container {
+    position: fixed;
+    top: -34vh;
+    left: 0px;
+    background-color: #212529;
+    transition: 0.5s;
+    height: 27vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #check:checked ~ nav div {
+    top: 7vh;
+  }
+  .profit {
+    background-color: rgba(4, 117, 4, 0.81);
+    border: none;
+    border-radius: 5px;
+    width: 95%;
+    height: 45px;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: rgba(233, 233, 233, 0.7333333333);
   }
 }
 .nav-button-container button:first-child {

@@ -1,0 +1,22 @@
+.body-main {
+    position: relative;
+    top: 7vh;
+    left: 0;
+    background-color: rgb(187, 184, 184);
+    height: 5000px;
+    width: 100%;
+    z-index: -100;
+    display: flex;
+    justify-content: center;
+}
+table {
+    position: absolute;
+    top: 15vh;
+    
+}
+table, th, td{
+
+    top: 8vh;
+    border: 1px solid black;
+    border-collapse: collapse ;
+}
