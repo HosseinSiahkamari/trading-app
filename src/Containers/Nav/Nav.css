@@ -24,10 +24,8 @@
   display: flex;
   justify-content: start;
   width: 70%;
-  height: 7vh;
   transition: 0.5s;
   margin-bottom: 10px;
-  background-color: #212529;
 }
 .button-container button:hover {
   cursor: pointer;
