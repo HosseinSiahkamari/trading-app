@@ -2,6 +2,7 @@ import './Body.css'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
+import Modal from 'react-modal';
 
 const Body = () => {
 
@@ -49,31 +50,34 @@ const Body = () => {
                 <h2 className="titr">Online list of cryptocurrency prices</h2>
             </div>
             <div className="table-container">
-            <table className='table1'>
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Currency</th>
-                        <th>Symbol</th>
-                        <th>Current Price</th>
-                        <th>Market Cap</th>
-                        <th>Change% (24H)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {responseDataApi.map(item => (
-                        <tr key={item.id}>
-                            <td>{item.market_cap_rank}</td>
-                            <td>{item.name}</td>
-                            <td>{item.symbol}</td>
-                            <td>{item.current_price}</td>
-                            <td>{item.market_cap}</td>
-                            <td>{item.market_cap_change_percentage_24h}</td>
-
+                <table className='table1'>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Currency</th>
+                            <th>Symbol</th>
+                            <th>Current Price</th>
+                            <th>Market Cap</th>
+                            <th>Change% (24H)</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {responseDataApi.map(item => (
+                            
+                            <tr key={item.id} >
+                                <td>{item.market_cap_rank}</td>
+                                <td>{item.name}</td>
+                                <td>{item.symbol}</td>
+                                <td>{item.current_price} $</td>
+                                <td>{item.market_cap.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} $</td>
+                                <td style={{
+                                    color: item.market_cap_change_percentage_24h < 0 ? '#ff471a' : 'black'
+                                }} >{item.market_cap_change_percentage_24h.toString().replace(/\B(?=(\d{5})+(?!\d))/g, ',').substring(0, 5)} %</td>
+
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
 
             </div>
         </div>
