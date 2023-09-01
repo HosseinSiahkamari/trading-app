@@ -2,10 +2,20 @@
     position: fixed;
     left: 0px;
     top: 0px;
+    display: flex;
+    justify-content: center;
     height: 100%;
     width: 25rem;
     background-color: #dcdcdc;
     z-index: 300;
+}
+.order-header-container{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 70px;
+    background-color: yellow;
 }
 .exit{
     position: fixed;
@@ -13,4 +23,43 @@
     top: 10px;
     width: 35px;
     height: 35px;color: rgb(55, 55, 55);
+    
+}
+.accordion{
+    position: absolute;
+    top: 70px;
+    width: 80%;
+    height: 60px;
+    background-color: aquamarine;
+}
+.accordion-item{
+
+}
+.accordion-header{
+
+}
+.button-acc{
+
+}
+.accordion-collapse{
+
+}
+.accordion-body{
+
+}
+.form-floating{
+
+}
+.form-select{
+
+}
+
+
+
+.order-list{
+    position: absolute;
+    top: 130px;
+    width: 80%;
+    height: 45px;
+    background-color: rgb(250, 15, 183);
 }

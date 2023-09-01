@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 import Nav from '../src/Containers/Nav/Nav'
@@ -8,37 +9,17 @@ import PlaceOfOrders from './UI/PlaceOfOrders/PlaceOfOrders'
 import PortfolioManagement from './UI/PortfolioManagement/PortfolioManagement';
 import AboutTheApp from './UI/AboutTheApp/AboutTheApp';
 import Body from './Containers/Body/Body';
+import LeftDropBox from './UI/Leftdropbox/Leftdropbox';
 
 function App() {
   const [placeOrder, setPlaceOrder] = useState(false)
   const [PortfolioMgnt, setPortfolioMgnt] = useState(false)
   const [aboutTheApp, setAboutTheApp] = useState(false)
+  const [responseDataApi, setResponseDataApi] = useState()
  
-
-  // const express = require('express');
-  // const cors = require('cors'); // ماژول cors را اضافه کنید
-  // const app = express();
-  
-  // app.use(cors()); // از cors() برای تنظیمات پیش‌فرض استفاده کنید
-  
-  // // مسیرها و منطق دیگر سرور
-  // // ...
-  
-  // const port = 3000 // یا هر پورت دلخواه دیگر
-  // app.listen(port, () => {
-  //   console.log(`http://localhost: ${port}`);
-  // });
-
-  
-
-
- 
-
-
-// const test = ()=>{
-//   console.log(responseDataApi);
-// }
-// test()
+useEffect(()=>{
+  setResponseDataApi(responseDataApi)
+},[])
 
 
 
@@ -86,7 +67,7 @@ function App() {
         onClickRightHandler={onClickPortfolioMgntHandler}
         onClickCenterHandler={onClickAboutTheAppHandler}
          />
-         <Body />
+         <Body responseDataApi={ responseDataApiHandler } />
         <PlaceOfOrders
           show={placeOrder}
           onExitLeftHandler={onExitLeftHandler}
@@ -102,6 +83,7 @@ function App() {
          onExitCenterHandler={onExitCenterHandler}
          click={onClose}
          />
+         <LeftDropBox options={responseDataApi} />
       </Layout>
     </div>
   );
