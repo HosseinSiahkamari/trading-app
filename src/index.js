@@ -5,6 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Modal from 'react-modal';
 
+// const express = require('express');
+// const cors = require('cors');
+
+// const app = express();
+
+// app.use(cors({
+//   origin:"http://localhost:3000",
+// }));
+
+
+
+
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 Modal.setAppElement('#root'); // یا انتخاب‌گر مناسب

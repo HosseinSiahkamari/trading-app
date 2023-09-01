@@ -1,6 +1,7 @@
 import './PlaceOfOrders.css';
 import Wrapper from '../../hoc/Wrapper';
 import BackDrop from '../BackDrop/BackDrop';
+import LeftDropBox from '../Leftdropbox/Leftdropbox';
 
 const PlaceOfOrders = (props) => {
     return (
@@ -21,7 +22,8 @@ const PlaceOfOrders = (props) => {
                         </svg>
                     </div>
                 </div>
-                <div className="accordion">
+                <LeftDropBox />
+                {/* <div className="accordion">
                     <div className="accordion-item">
                         <h2 className="accordion-header">
                             Insert your Order
@@ -29,6 +31,7 @@ const PlaceOfOrders = (props) => {
                         </h2>
                         <div className="accordion-collapse">
                             <div className="accordion-body">
+                                
                                 <div className="form-floating">
                                     <label htmlFor=""></label>
                                     <select className='form-select' name="" id=""></select>
@@ -41,7 +44,7 @@ const PlaceOfOrders = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="order-list"></div>
+                <div className="order-list"></div> */}
 
             </div>
         </Wrapper>
