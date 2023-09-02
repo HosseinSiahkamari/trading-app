@@ -2,21 +2,14 @@ import './Body.css'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useContext } from 'react';
-import axios from 'axios';
 import Modal from 'react-modal';
 import { format } from 'date-fns';
 import { enUS } from 'date-fns/locale';
-import LeftDropBox from '../../UI/Leftdropbox/Leftdropbox';
 import UserContext from '../../UserContext';
 
 const Body = (  ) => {
 
     const user = useContext(UserContext);
-
-
-    // {responseDataApi.map((item)=>{
-    //     console.log(item.id);
-    // })}
 
     const [selectedItem, setSelectedItem] = useState(null);
     const [formattedDate, setFormattedDate] = useState();
@@ -95,8 +88,14 @@ const Body = (  ) => {
                     <div className='modal-container'>
                         <div className="header-modal">
                             {selectedItem && <h2>{selectedItem.name} </h2>}
-                            <svg onClick={closeModal} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            <svg onClick={closeModal} 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            fill="none" viewBox="0 0 24 24" 
+                            strokeWidth="1.5" 
+                            stroke="currentColor" 
+                            className="w-6 h-6">
+                                <path strokeLinecap="round"
+                                 strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </div>
                         <div className="body-modal">

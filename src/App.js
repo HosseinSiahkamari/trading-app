@@ -1,7 +1,6 @@
 import './App.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { useContext } from 'react';
 import axios from 'axios';
 
 
@@ -18,12 +17,7 @@ function App() {
   const [placeOrder, setPlaceOrder] = useState(false)
   const [PortfolioMgnt, setPortfolioMgnt] = useState(false)
   const [aboutTheApp, setAboutTheApp] = useState(false)
-  // const [responseDataApi, setResponseDataApi] = useState()
- 
-// useEffect(()=>{
-//   setResponseDataApi(responseDataApi)
-// },[])
-
+  const [responseDataApi, setResponseDataApi] = useState([]);
 
 
   const onClickPlaceOrderHandler = () => {
@@ -57,8 +51,6 @@ function App() {
     setPortfolioMgnt(false)
     setAboutTheApp(false)
   }
-
-  const [responseDataApi, setResponseDataApi] = useState([]);
 
 
   const fetchData =async () => {
