@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import UserContext from '../../UserContext';
 
-const LeftDropBox = (props) => {
+const LeftDropBox = () => {
 
     const user = useContext(UserContext);
 

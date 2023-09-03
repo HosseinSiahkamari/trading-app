@@ -1,6 +1,11 @@
 import './Nav.css'
+import { useContext } from 'react';
+import UserContext from '../../UserContext';
+import ProfitContext from '../../ProfitContext';
 
 const Nav = (props) => {
+
+
     return (<div>
         <input type="checkbox" id='check' />
         <label htmlFor="check" className='check-btn'>
@@ -16,7 +21,7 @@ const Nav = (props) => {
                 <button className='portfolio' onClick={props.onClickRightHandler}>portfolio management</button>
                 <button className='market-map'>Market Map</button>
                 <button className='about-the-app'onClick={props.onClickCenterHandler}>About the App</button>
-                <button className='profit' >Profit or Loss 0.000 $</button>
+                <button className='profit' > </button>
             </div>
         </nav>
     </div>
