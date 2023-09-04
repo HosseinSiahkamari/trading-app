@@ -19,7 +19,7 @@ const PortfolioManagement = (props) => {
     const [rows, setRows] = useState([]);
     const [nextRowNumber, setNextRowNumber] = useState(1);
     const [selectedCoinPrice, setSelectedCoinPrice] = useState(null);
-    const [profit, setProfit] = useState('Profit or Loss 0.0000 $');
+    const [profit, setProfit] = useState();
 
 
 
@@ -35,7 +35,7 @@ const PortfolioManagement = (props) => {
         sendDataToParent();
     };
 
-    const toggleDropDown = ({ onDataFromChild }) => {
+    const toggleDropDown = () => {
 
         setIsOpen(!isOpen)
     }
@@ -51,9 +51,10 @@ const PortfolioManagement = (props) => {
         };
         setAllState([...allState, newData]);
         setIdCounter(idCounter + 1);
-        // event.preventDefault();
 
-        const result = enterPoint - selectedCoinPrice;
+
+        const result = (enterPoint - selectedCoinPrice);
+        console.log(result);
         setProfit(result)
 
         const newRow = { number: nextRowNumber, };
@@ -66,8 +67,6 @@ const PortfolioManagement = (props) => {
         const selectedCoin = user.find(item => item.id === selectedCoinId);
         setSelectedOptionCoin(selectedCoin.id);
         setSelectedCoinPrice(selectedCoin.current_price);
-
-
     }
     const orderDeleteHandler = (rowId) => {
         const updatedData = allState.filter((item) => item.id !== rowId);

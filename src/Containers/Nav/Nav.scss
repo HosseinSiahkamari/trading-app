@@ -66,8 +66,18 @@ $black-gray-color: #212529;
     cursor: pointer;
 }
 
-.profit {
+.green {
     background-color: rgba(4, 117, 4, 0.81);
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    height: 45px;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #e9e9e9bb;
+}
+.red {
+    background-color: rgba(191, 38, 14, 0.81);
     border: none;
     border-radius: 5px;
     width: 200px;
@@ -101,8 +111,18 @@ $black-gray-color: #212529;
         top: 7vh;
     }
 
-    .profit {
+    .green{
         background-color: rgba(4, 117, 4, 0.81);
+        border: none;
+        border-radius: 5px;
+        width: 95%;
+        height: 45px;
+        margin-top: 10px;
+        font-size: 1rem;
+        color: #e9e9e9bb;
+    }
+    .red{
+        background-color: rgba(191, 38, 14, 0.81);
         border: none;
         border-radius: 5px;
         width: 95%;

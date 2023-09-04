@@ -20,7 +20,6 @@ function App() {
   const [dataFromChild, setDataFromChild] = useState(null);
 
  
-
   const handleDataFromChild = (data) => {
     setDataFromChild(data);
   };

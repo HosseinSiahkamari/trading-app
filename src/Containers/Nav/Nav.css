@@ -1,5 +1,4 @@
 .nav-container {
-  position: fixed;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -58,8 +57,19 @@
   cursor: pointer;
 }
 
-.profit {
+.green {
   background-color: rgba(4, 117, 4, 0.81);
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+  height: 45px;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: rgba(233, 233, 233, 0.7333333333);
+}
+
+.red {
+  background-color: rgba(191, 38, 14, 0.81);
   border: none;
   border-radius: 5px;
   width: 200px;
@@ -89,8 +99,18 @@
   #check:checked ~ nav div {
     top: 7vh;
   }
-  .profit {
+  .green {
     background-color: rgba(4, 117, 4, 0.81);
+    border: none;
+    border-radius: 5px;
+    width: 95%;
+    height: 45px;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: rgba(233, 233, 233, 0.7333333333);
+  }
+  .red {
+    background-color: rgba(191, 38, 14, 0.81);
     border: none;
     border-radius: 5px;
     width: 95%;

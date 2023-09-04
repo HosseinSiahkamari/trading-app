@@ -1,6 +1,16 @@
 import './Nav.css'
+import { useState, useEffect } from 'react'
 
 const Nav = (props) => {
+
+    const [result, setResult] = useState('0.00');
+
+    useEffect(() => {
+        if (props.dataFromChild !== null && props.dataFromChild !== undefined) {
+            const updatedResult = parseFloat(props.dataFromChild.toFixed(2))
+            setResult(updatedResult);
+        }
+    }, [props.dataFromChild]);
 
 
     return (<div>
@@ -18,7 +28,8 @@ const Nav = (props) => {
                 <button className='portfolio' onClick={props.onClickRightHandler}>portfolio management</button>
                 <button className='market-map'>Market Map</button>
                 <button className='about-the-app'onClick={props.onClickCenterHandler}>About the App</button>
-                <button className='profit' > {props.dataFromChild}$ </button>
+                <button className={`${result > 0 ? 'green' : 'red' }`} > Profit or Loss{result}$ </button>
+
             </div>
         </nav>
     </div>
