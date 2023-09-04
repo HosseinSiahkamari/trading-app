@@ -1,7 +1,4 @@
 import './Nav.css'
-import { useContext } from 'react';
-import UserContext from '../../UserContext';
-import ProfitContext from '../../ProfitContext';
 
 const Nav = (props) => {
 
@@ -21,7 +18,7 @@ const Nav = (props) => {
                 <button className='portfolio' onClick={props.onClickRightHandler}>portfolio management</button>
                 <button className='market-map'>Market Map</button>
                 <button className='about-the-app'onClick={props.onClickCenterHandler}>About the App</button>
-                <button className='profit' > </button>
+                <button className='profit' > {props.dataFromChild}$ </button>
             </div>
         </nav>
     </div>

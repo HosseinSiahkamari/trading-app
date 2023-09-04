@@ -10,7 +10,6 @@ import PlaceOfOrders from './UI/PlaceOfOrders/PlaceOfOrders'
 import PortfolioManagement from './UI/PortfolioManagement/PortfolioManagement';
 import AboutTheApp from './UI/AboutTheApp/AboutTheApp';
 import Body from './Containers/Body/Body';
-import LeftDropBox from './UI/Leftdropbox/Leftdropbox';
 import UserContext from './UserContext';
 
 function App() {
@@ -18,7 +17,13 @@ function App() {
   const [PortfolioMgnt, setPortfolioMgnt] = useState(false)
   const [aboutTheApp, setAboutTheApp] = useState(false)
   const [responseDataApi, setResponseDataApi] = useState([]);
+  const [dataFromChild, setDataFromChild] = useState(null);
 
+ 
+
+  const handleDataFromChild = (data) => {
+    setDataFromChild(data);
+  };
 
   const onClickPlaceOrderHandler = () => {
     setPlaceOrder(true)
@@ -52,7 +57,6 @@ function App() {
     setAboutTheApp(false)
   }
 
-
   const fetchData =async () => {
       try {
           
@@ -68,9 +72,6 @@ function App() {
   }, []);
 
 
-
-
-
   return (
     <UserContext.Provider value={responseDataApi}>
       <div className="App">
@@ -79,6 +80,7 @@ function App() {
         onClickLeftHandler={onClickPlaceOrderHandler}
         onClickRightHandler={onClickPortfolioMgntHandler}
         onClickCenterHandler={onClickAboutTheAppHandler}
+        dataFromChild={dataFromChild}
          />
          <Body responseDataApi={ '' } />
         <PlaceOfOrders
@@ -90,6 +92,7 @@ function App() {
         show={PortfolioMgnt}
         onExitRightHandler={onExitRightHandler}
         click={onClose}
+        handleDataFromChild={handleDataFromChild}
          />
          <AboutTheApp
          show={aboutTheApp}
