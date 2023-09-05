@@ -24,11 +24,14 @@ const Nav = (props) => {
         <nav className="nav-container">
             <span className="navbar-brand">Trading App</span>
             <div className="button-container">
-                <button className='add-order' onClick={props.onClickLeftHandler}>Add Order</button>
+                <div className='add-order-container' >
+                    <button className='add-order' onClick={props.onClickLeftHandler}>Add Order </button>
+                    <div className="value-container">{props.placeOrder} </div>
+                </div>
                 <button className='portfolio' onClick={props.onClickRightHandler}>portfolio management</button>
                 <button className='market-map'>Market Map</button>
-                <button className='about-the-app'onClick={props.onClickCenterHandler}>About the App</button>
-                <button className={`${result > 0 ? 'green' : 'red' }`} > Profit or Loss{result}$ </button>
+                <button className='about-the-app' onClick={props.onClickCenterHandler}>About the App</button>
+                <button className={`${result >= 0 ? 'green' : 'red'}`} > Profit or Loss{result}$ </button>
 
             </div>
         </nav>

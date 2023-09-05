@@ -56,7 +56,7 @@ const LeftDropBox = () => {
         const updatedData = allState.filter((item) => item.id !== rowId);
 
         setAllState(updatedData);
-    
+
         updatedData.forEach((item, index) => {
             item.id = index + 1;
         });

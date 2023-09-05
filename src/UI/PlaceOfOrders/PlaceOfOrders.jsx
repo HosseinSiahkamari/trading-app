@@ -23,28 +23,7 @@ const PlaceOfOrders = (props) => {
                     </div>
                 </div>
                 <LeftDropBox />
-                {/* <div className="accordion">
-                    <div className="accordion-item">
-                        <h2 className="accordion-header">
-                            Insert your Order
-                            <button className="button-acc"></button>
-                        </h2>
-                        <div className="accordion-collapse">
-                            <div className="accordion-body">
-                                
-                                <div className="form-floating">
-                                    <label htmlFor=""></label>
-                                    <select className='form-select' name="" id=""></select>
-                                </div>
-                                <form action="">
-                                    <div></div>
-                                    <button></button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="order-list"></div> */}
+                
 
             </div>
         </Wrapper>
