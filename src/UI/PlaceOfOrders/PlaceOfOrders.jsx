@@ -23,8 +23,6 @@ const PlaceOfOrders = (props) => {
                     </div>
                 </div>
                 <LeftDropBox />
-                
-
             </div>
         </Wrapper>
     );

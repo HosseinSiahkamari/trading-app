@@ -52,6 +52,9 @@
 }
 
 .value-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 20px;
   height: 20px;
   background-color: rgb(210, 214, 3);

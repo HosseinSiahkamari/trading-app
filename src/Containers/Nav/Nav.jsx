@@ -1,7 +1,10 @@
 import './Nav.css'
 import { useState, useEffect } from 'react'
+import { useMyContext } from '../../MyContext';
 
 const Nav = (props) => {
+
+    const { myState } = useMyContext();
 
     const [result, setResult] = useState('0.00');
 
@@ -11,6 +14,8 @@ const Nav = (props) => {
             setResult(updatedResult);
         }
     }, [props.dataFromChild]);
+
+    console.log(myState);
 
 
     return (<div>
@@ -26,7 +31,7 @@ const Nav = (props) => {
             <div className="button-container">
                 <div className='add-order-container' >
                     <button className='add-order' onClick={props.onClickLeftHandler}>Add Order </button>
-                    <div className="value-container">{props.placeOrder} </div>
+                    <div className="value-container">{myState.length} </div>
                 </div>
                 <button className='portfolio' onClick={props.onClickRightHandler}>portfolio management</button>
                 <button className='market-map'>Market Map</button>

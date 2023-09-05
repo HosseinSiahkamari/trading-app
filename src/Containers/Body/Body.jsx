@@ -7,7 +7,7 @@ import { format } from 'date-fns';
 import { enUS } from 'date-fns/locale';
 import UserContext from '../../UserContext';
 
-const Body = (  ) => {
+const Body = () => {
 
     const user = useContext(UserContext);
 
@@ -31,7 +31,7 @@ const Body = (  ) => {
     }, [selectedItem]);
 
 
-    
+
 
     return (
         <div className='body-main'>
@@ -88,14 +88,14 @@ const Body = (  ) => {
                     <div className='modal-container'>
                         <div className="header-modal">
                             {selectedItem && <h2>{selectedItem.name} </h2>}
-                            <svg onClick={closeModal} 
-                            xmlns="http://www.w3.org/2000/svg" 
-                            fill="none" viewBox="0 0 24 24" 
-                            strokeWidth="1.5" 
-                            stroke="currentColor" 
-                            className="w-6 h-6">
+                            <svg onClick={closeModal}
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24"
+                                strokeWidth="1.5"
+                                stroke="currentColor"
+                                className="w-6 h-6">
                                 <path strokeLinecap="round"
-                                 strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </div>
                         <div className="body-modal">

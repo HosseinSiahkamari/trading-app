@@ -2,10 +2,12 @@ import './Leftdropbox.css'
 import { useState } from 'react';
 import { useContext } from 'react';
 import UserContext from '../../UserContext';
+import { useMyContext } from '../../MyContext';
 
 const LeftDropBox = () => {
 
     const user = useContext(UserContext);
+    const { myState, setMyState } = useMyContext();
 
     const [isOpen, setIsOpen] = useState(false);
     const [targetPrice, setTargetPrice] = useState();
@@ -38,6 +40,7 @@ const LeftDropBox = () => {
             id: newId,
         };
         setAllState([...allState, newData]);
+        setMyState([...allState, newData]);
         setIdCounter(idCounter + 1);
         event.preventDefault();
 
@@ -56,6 +59,7 @@ const LeftDropBox = () => {
         const updatedData = allState.filter((item) => item.id !== rowId);
 
         setAllState(updatedData);
+        setMyState(updatedData);
 
         updatedData.forEach((item, index) => {
             item.id = index + 1;

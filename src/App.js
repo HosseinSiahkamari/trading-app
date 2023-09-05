@@ -12,6 +12,7 @@ import AboutTheApp from './UI/AboutTheApp/AboutTheApp';
 import Body from './Containers/Body/Body';
 import UserContext from './UserContext';
 import Loading from './UI/Loading/Loading';
+import { MyContextProvider } from './MyContext';
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
 
- 
+
   const handleDataFromChild = (data) => {
     setDataFromChild(data);
   };
@@ -60,57 +61,59 @@ function App() {
     setAboutTheApp(false)
   }
 
-  const fetchData =async () => {
+  const fetchData = async () => {
     setIsLoading(true);
-      try {
-          
-          const response = await axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en');
-          setResponseDataApi(response.data);
-          setIsLoading(false);
-      } catch (error) {
-          console.error('خطا در درخواست:', error);
-          setIsLoading(false);
-      }
+    try {
+
+      const response = await axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en');
+      setResponseDataApi(response.data);
+      setIsLoading(false);
+    } catch (error) {
+      console.error('خطا در درخواست:', error);
+      setIsLoading(false);
+    }
   }
 
   useEffect(() => {
-      fetchData();
+    fetchData();
   }, []);
 
 
   return (
     <UserContext.Provider value={responseDataApi}>
+      <MyContextProvider>
       <div className="App">
-      {isLoading && <Loading />} 
-      {!isLoading && <Layout>
-        <Nav 
-        onClickLeftHandler={onClickPlaceOrderHandler}
-        onClickRightHandler={onClickPortfolioMgntHandler}
-        onClickCenterHandler={onClickAboutTheAppHandler}
-        dataFromChild={dataFromChild}
-        placeOrder={placeOrder}
-         />
-         <Body responseDataApi={ '' } />
-         
-        <PlaceOfOrders
-          show={placeOrder}
-          onExitLeftHandler={onExitLeftHandler}
-          click={onClose}
-        />
-        <PortfolioManagement
-        show={PortfolioMgnt}
-        onExitRightHandler={onExitRightHandler}
-        click={onClose}
-        handleDataFromChild={handleDataFromChild}
-         />
-         <AboutTheApp
-         show={aboutTheApp}
-         onExitCenterHandler={onExitCenterHandler}
-         click={onClose}
-         />
-         
-      </Layout>}
-    </div>
+        {isLoading && <Loading />}
+        {!isLoading && <Layout>
+          <Nav
+            onClickLeftHandler={onClickPlaceOrderHandler}
+            onClickRightHandler={onClickPortfolioMgntHandler}
+            onClickCenterHandler={onClickAboutTheAppHandler}
+            dataFromChild={dataFromChild}
+            placeOrder={placeOrder}
+          />
+          <Body responseDataApi={''} />
+
+          <PlaceOfOrders
+            show={placeOrder}
+            onExitLeftHandler={onExitLeftHandler}
+            click={onClose}
+          />
+          <PortfolioManagement
+            show={PortfolioMgnt}
+            onExitRightHandler={onExitRightHandler}
+            click={onClose}
+            handleDataFromChild={handleDataFromChild}
+          />
+          <AboutTheApp
+            show={aboutTheApp}
+            onExitCenterHandler={onExitCenterHandler}
+            click={onClose}
+          />
+
+        </Layout>}
+      </div>
+      </MyContextProvider>
     </UserContext.Provider>
   );
 }
