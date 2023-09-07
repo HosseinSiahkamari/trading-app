@@ -1,5 +1,4 @@
 import { createContext, useContext, useState } from 'react';
-import Nav from './Containers/Nav/Nav';
 
 const MyContext = createContext();
 

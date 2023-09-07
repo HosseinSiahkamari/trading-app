@@ -13,6 +13,7 @@ import Body from './Containers/Body/Body';
 import UserContext from './UserContext';
 import Loading from './UI/Loading/Loading';
 import { MyContextProvider } from './MyContext';
+import { ProfolioContextProvider } from './ProfolioContext';
 
 
 function App() {
@@ -85,13 +86,15 @@ function App() {
       <div className="App">
         {isLoading && <Loading />}
         {!isLoading && <Layout>
-          <Nav
+         <ProfolioContextProvider  >
+         <Nav
             onClickLeftHandler={onClickPlaceOrderHandler}
             onClickRightHandler={onClickPortfolioMgntHandler}
             onClickCenterHandler={onClickAboutTheAppHandler}
             dataFromChild={dataFromChild}
             placeOrder={placeOrder}
           />
+         
           <Body responseDataApi={''} />
 
           <PlaceOfOrders
@@ -105,6 +108,7 @@ function App() {
             click={onClose}
             handleDataFromChild={handleDataFromChild}
           />
+          </ProfolioContextProvider>
           <AboutTheApp
             show={aboutTheApp}
             onExitCenterHandler={onExitCenterHandler}

@@ -1,35 +1,53 @@
 .nav-container {
-  display: flex;
-  justify-content: start;
-  align-items: center;
   width: 100%;
-  height: 7vh;
+  height: 8vh;
   padding: 2px 0px;
   background-color: #212529;
 }
 
 .navbar-brand {
+  box-sizing: border-box;
   position: fixed;
-  left: 0.5rem;
-  top: 0.5rem;
-  margin: 5px 30px;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 60px;
   font-size: 1.25rem;
   text-decoration: none;
   color: #fff;
   font-family: Open Sans;
+  white-space: nowrap;
 }
 
 .button-container {
   display: flex;
-  justify-content: start;
-  width: 70%;
-  transition: 0.5s;
-  margin-bottom: 10px;
+  margin-left: 150px;
 }
-.button-container button:hover {
+
+.main-btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: stretch;
+  flex-wrap: wrap;
+}
+
+.btn-container {
+  display: flex;
+}
+
+button:hover {
   cursor: pointer;
 }
-.button-container button {
+
+svg {
+  cursor: pointer;
+}
+
+button {
   font-size: 1rem;
   border: none;
   margin: 5px 15px;
@@ -43,39 +61,74 @@
 .about-the-app {
   color: #0d6efd;
   background-color: #212529;
+  white-space: nowrap;
 }
 
 .add-order-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  margin: 2px 15px;
 }
 
 .value-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
+  width: 25px;
   height: 20px;
-  background-color: rgb(210, 214, 3);
+  background-color: rgb(214, 186, 3);
   color: #fff;
   border-radius: 50%;
-  margin: auto;
 }
 
+.profolio-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 2px 15px;
+}
+
+.value2-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 20px;
+  background-color: rgb(214, 31, 3);
+  color: #fff;
+  border-radius: 50%;
+}
+
+.check-btn {
+  position: fixed;
+  background-color: #fff;
+  display: none;
+}
 .check-btn svg {
   width: 60px;
-  position: fixed;
-  right: 1.5rem;
-  top: 0rem;
-  color: #fff;
-  z-index: 10;
+  height: 60px;
 }
 
 .check-btn,
 #check {
   display: none;
   cursor: pointer;
+}
+
+.navbar-toggler {
+  display: none;
+  cursor: pointer;
+}
+
+.btn {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  color: #e62020;
+  z-index: 10;
 }
 
 .green {
@@ -87,6 +140,10 @@
   margin-top: 10px;
   font-size: 1rem;
   color: rgba(233, 233, 233, 0.7333333333);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
 }
 
 .red {
@@ -98,33 +155,29 @@
   margin-top: 10px;
   font-size: 1rem;
   color: rgba(233, 233, 233, 0.7333333333);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
 }
 
-@media (max-width: 970px) {
+@media (max-width: 975px) {
   .check-btn {
     display: block;
   }
-  .button-container {
-    position: fixed;
-    top: -34vh;
-    left: 0px;
-    background-color: #212529;
-    transition: 0.5s;
-    height: 27vh;
-    width: 100%;
+  #check:checked ~ .main-btn-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: 300px;
   }
-  #check:checked ~ nav div {
-    top: 7vh;
+  #check:checked ~ .nav-container {
+    height: 300px;
   }
   .green {
     background-color: rgba(4, 117, 4, 0.81);
     border: none;
     border-radius: 5px;
-    width: 95%;
+    width: 80%;
     height: 45px;
     margin-top: 10px;
     font-size: 1rem;
@@ -140,7 +193,4 @@
     font-size: 1rem;
     color: rgba(233, 233, 233, 0.7333333333);
   }
-}
-.nav-button-container button:first-child {
-  margin-left: 0px;
 }/*# sourceMappingURL=Nav.css.map */

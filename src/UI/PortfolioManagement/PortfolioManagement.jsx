@@ -3,10 +3,12 @@ import Wrapper from '../../hoc/Wrapper';
 import BackDrop from '../BackDrop/BackDrop';
 import { useState, useContext } from 'react';
 import UserContext from '../../UserContext';
+import { useProfolioContext } from '../../ProfolioContext';
 
 const PortfolioManagement = (props) => {
 
     const user = useContext(UserContext);
+    const { profolioState, setProfolioState } = useProfolioContext();
 
 
     const [isOpen, setIsOpen] = useState(false);
@@ -50,6 +52,7 @@ const PortfolioManagement = (props) => {
             id: newId,
         };
         setAllState([...allState, newData]);
+        setProfolioState([...allState, newData]);
         setIdCounter(idCounter + 1);
 
 
@@ -72,6 +75,7 @@ const PortfolioManagement = (props) => {
         const updatedData = allState.filter((item) => item.id !== rowId);
 
         setAllState(updatedData);
+        setProfolioState(updatedData);
 
         updatedData.forEach((item, index) => {
             item.id = index + 1;
