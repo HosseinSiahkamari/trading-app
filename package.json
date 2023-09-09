@@ -2,8 +2,6 @@
   "name": "trading-app",
   "version": "0.1.0",
   "private": true,
-  "proxy":"https://api.coingecko.com",
-  "homepage":"http://localhost:3000/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -12,6 +10,7 @@
     "browserify-zlib": "^0.2.0",
     "cors": "^2.8.5",
     "date-fns": "^2.30.0",
+    "express": "^4.18.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",

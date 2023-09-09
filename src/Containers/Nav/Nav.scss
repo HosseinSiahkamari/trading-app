@@ -2,43 +2,49 @@ $blue-color: #0d6efd;
 $black-gray-color: #212529;
 
 
-.nav-container {
-    
+.nav-div {
     width: 100%;
-    height: 8vh;
-    padding: 2px 00px;
+    height: 60px;
     background-color: $black-gray-color ;
+    position: relative;
+    left: 0px;
+}
+.nav-container{
+    position: absolute;
+    background-color: $black-gray-color;
+    width: 90%;
+    height: 60px;
+     display: flex;
+    flex-direction: row;
 }
 
 .navbar-brand {
     box-sizing: border-box;
-    position: fixed;
+    position: absolute;
     left: 0px;
-    top: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
+    width: 130px;
     height: 60px;
     font-size: 1.25rem;
     text-decoration: none;
     color: #fff;
     font-family: Open Sans;
     white-space: nowrap;
+    z-index: 1;
+    background-color: $black-gray-color;
 }
-.button-container{
-    display: flex;
-    margin-left: 150px;
-}
+
 .main-btn-container{
+    position: absolute;
+    left: 130px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    align-content: stretch;
-    flex-wrap: wrap;
-}
-.btn-container{
-    display: flex;
+    width: 80%;
+    height: 60px;
+    background-color: $black-gray-color;
+    transition: all 0.5s;
 }
 
     button:hover {
@@ -70,9 +76,10 @@ $black-gray-color: #212529;
 .add-order-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-    margin: 2px 15px;
+    background-color: $black-gray-color;
+    box-sizing: border-box;
+    width: 150px;
 
 }
 
@@ -90,9 +97,10 @@ $black-gray-color: #212529;
 .profolio-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
     margin: 2px 15px;
+    box-sizing: border-box;
+    width: 250px;
 }
 
 .value2-container {
@@ -106,46 +114,25 @@ $black-gray-color: #212529;
     border-radius: 50%;
 }
 .check-btn{
-    position: fixed;
-    // right: 10px;
-    // top: -20px;
-    background-color: #fff;
-    display: none;
-    // justify-content: center;
-    // width: 60px;
-    // height: 50px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    z-index: 1;
     svg{
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
-
 }
 .check-btn,
-#check{
-    display: none;
-    cursor: pointer;
+#check {
+  display: none;
+  cursor: pointer;
 }
-
-.navbar-toggler {
-    display: none;
-    cursor: pointer;
-}
-// #check
-//  {
-//     display: none;
-//     cursor: pointer;
-// }
-
-.btn {
-    position: fixed;
-    
-    right: 10px;
-    top: 10px;
-    color: #e62020;
-    z-index: 10;
-    // background-color: yellow;
-}
-
 
 .green {
     background-color: rgba(4, 117, 4, 0.81);
@@ -181,18 +168,47 @@ $black-gray-color: #212529;
 @media(max-width: 975px) {
     .check-btn {
         display: block;
-        
+      }
+    .check-btn{
+        position: fixed;
+        right: 5px;
+        top: 5px;
+        background-color: $black-gray-color;
     }
-    
-      #check:checked~.main-btn-container {
+    .main-btn-container{
+        position: fixed;
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
-        height: 300px;
+        width: 100%;
+        height: 200px;
+        left: 0px;
+        top: -400px;
+        z-index: 0;
     }
-      #check:checked~.nav-container {
-        
-        height: 300px;
+    .navbar-brand {
+        box-sizing: border-box;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 130px;
+        height: 60px;
+        font-size: 1.25rem;
+        text-decoration: none;
+        color: #fff;
+        font-family: Open Sans;
+        white-space: nowrap;
+       
     }
+
+    #check:checked ~  div{
+        top: 59px;
+        transition: all 0.5s;
+      }
 
     .green {
         background-color: rgba(4, 117, 4, 0.81);
@@ -203,6 +219,7 @@ $black-gray-color: #212529;
         margin-top: 10px;
         font-size: 1rem;
         color: #e9e9e9bb;
+        margin-bottom: 5px;
     }
 
     .red {
