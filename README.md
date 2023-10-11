@@ -35,5 +35,5 @@ npm start
 Explore Crypto Markets:
 Open your browser and navigate to http://localhost:3000 to explore real-time cryptocurrency market data.
 
-2. **   https://trading-app-rosy.vercel.app/
+2. ** Click the link below:  https://trading-app-rosy.vercel.app/
 
