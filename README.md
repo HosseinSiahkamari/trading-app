@@ -16,7 +16,7 @@ React Mastery: Utilize the power of React to create a responsive and efficient u
 Continuous Updates: The app ensures users have the latest information at their fingertips with automatic updates.
 
 How to Use
-Clone the Repository:
+1. ** Clone the Repository:
 
 bash
 Copy code
@@ -34,4 +34,6 @@ Copy code
 npm start
 Explore Crypto Markets:
 Open your browser and navigate to http://localhost:3000 to explore real-time cryptocurrency market data.
+
+2. **   https://trading-app-rosy.vercel.app/
 
